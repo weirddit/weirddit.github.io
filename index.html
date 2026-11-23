@@ -42,7 +42,11 @@
   </section>
   <section id="player">
     <div class="vwrap"><video id="video" playsinline></video></div>
-    <button class="btn-play" id="playbtn">Play</button>
+    <button class="btn-play" id="playbtn" aria-label="Play">
+      <svg class="ic ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11-6.86a1 1 0 0 0 0-1.7l-11-6.86A1 1 0 0 0 8 5.14z"/></svg>
+      <svg class="ic ic-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5.5" y="4.5" width="4.5" height="15" rx="1.4"/><rect x="14" y="4.5" width="4.5" height="15" rx="1.4"/></svg>
+      <span class="lbl" id="playlbl">Play</span>
+    </button>
     <div class="timeline">
       <div class="strip" id="strip">
         <div class="tiles" id="tiles"></div>

@@ -1,0 +1,5 @@
+/* Player screen: video + play button */
+.vwrap{flex:1;min-height:0;width:100%;container-type:size;display:flex;justify-content:center;align-items:center}
+#video{display:block;height:50vh;height:min(100cqh,calc(100cqw*16/9));aspect-ratio:9/16;width:auto;object-fit:contain;border-radius:14px;background:#000}
+.btn-play{flex:none;margin-top:clamp(8px,2dvh,24px);background:#0f0f0f;color:#fff;font-weight:700;font-size:clamp(15px,2.4dvh,18px);height:clamp(40px,6.5dvh,52px);min-width:160px;padding:0 40px;border-radius:26px;transition:.15s}
+.btn-play:hover{background:#333}

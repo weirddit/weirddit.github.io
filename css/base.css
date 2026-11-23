@@ -1,1 +1,12 @@
+/* Global tokens + reset + screen switching */
+:root{--bg:#ffffff;--surface:#f2f2f2;--surface2:#e5e5e5;--line:#e0e0e0;--text:#0f0f0f}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:Roboto,Arial,Helvetica,sans-serif;height:100vh;height:100dvh;overflow:hidden}
+button{font-family:inherit;cursor:pointer;border:0}
 
+.wrap{max-width:1100px;margin:0 auto;height:100vh;height:100dvh;padding:clamp(8px,2dvh,24px) clamp(12px,3vw,24px);display:flex;flex-direction:column}
+#home,#tool,#player{display:none;flex:1;min-height:0;flex-direction:column}
+body:not(.in-tool):not(.in-player) #home{display:flex;align-items:center;justify-content:center}
+body.in-tool #tool{display:flex}
+body.in-player #player{display:flex;align-items:center;text-align:center}

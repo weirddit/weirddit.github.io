@@ -1,0 +1,12 @@
+/* Timeline strip under the player */
+.timeline{flex:none;width:min(100%,900px);margin-top:clamp(14px,3.5dvh,32px)}
+.strip{position:relative;height:clamp(40px,9dvh,90px);cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none}
+.tiles{display:flex;gap:2px;height:100%;border-radius:10px;overflow:hidden;background:#fff}
+.tile{min-width:0;height:100%;background:#0f0f0f;color:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;font-size:clamp(10px,1.9dvh,14px);font-weight:700;font-variant-numeric:tabular-nums}
+.tiles.nolabel .tile:not(.special) span{display:none}
+.tile.special{white-space:normal;text-align:center;line-height:1.1;font-size:clamp(8px,1.4dvh,11px);padding:0 2px;background:#1d1d1d;box-shadow:inset 0 -3px 0 #ff9f1c}
+.tile.special.loop{box-shadow:inset 0 -3px 0 #a78bfa}
+.tile.special.hook{box-shadow:inset 0 -3px 0 #2ec4b6}
+.playhead{position:absolute;top:-8px;bottom:-8px;left:0;width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 0 1.5px #0f0f0f;border-radius:2px;pointer-events:none}
+.over{display:none;position:absolute;top:0;bottom:0;right:0;border-radius:0 10px 10px 0;background:rgba(128,128,128,.92);border-left:2px dashed #fff;pointer-events:none}
+.time{margin-top:clamp(8px,1.8dvh,16px);font-size:clamp(12px,1.8dvh,14px);color:#666;font-variant-numeric:tabular-nums}

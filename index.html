@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weirddit Tool</title>
+<link rel="icon" href="assets/avatar.png">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/upload.css">
+<link rel="stylesheet" href="css/player.css">
+<link rel="stylesheet" href="css/timeline.css">
+</head>
+<body>
+
+<main class="wrap">
+  <section id="home">
+    <div class="channel">
+      <img class="shorts-big" src="assets/shorts-logo.png" alt="YouTube Shorts">
+      <div class="avatar"><img src="assets/avatar.png" alt="Weirddit"></div>
+      <div class="info">
+        <h1>Weirddit</h1>
+        <button class="btn-access" id="access">Access Tool</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="tool">
+    <div class="tool-head">
+      <button class="back" id="back">&larr; Back</button>
+    </div>
+    <h2 class="upload-title">Upload</h2>
+    <label class="dropzone" id="drop">
+      <input type="file" id="file" accept="video/*" hidden>
+      <svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M12 4l-5 5M12 4l5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+      <div class="dz-main" id="dz-main">Drag &amp; drop your video here</div>
+      <div class="dz-sub" id="dz-sub">or click to choose a video</div>
+    </label>
+  </section>
+  <section id="player">
+    <div class="vwrap"><video id="video" playsinline></video></div>
+    <button class="btn-play" id="playbtn">Play</button>
+    <div class="timeline">
+      <div class="strip" id="strip">
+        <div class="tiles" id="tiles"></div>
+        <div class="over" id="over"></div>
+        <div class="playhead" id="playhead"></div>
+      </div>
+      <div class="time" id="time">0:00 / 0:00</div>
+    </div>
+  </section>
+</main>
+
+<!-- Load order matters: core -> screens -> features -> main -->
+<script src="js/core/app.js"></script>
+<script src="js/core/config.js"></script>
+<script src="js/core/dom.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/router.js"></script>
+<script src="js/screens/home.js"></script>
+<script src="js/screens/upload.js"></script>
+<script src="js/screens/player.js"></script>
+<script src="js/features/segments.js"></script>
+<script src="js/features/timeline.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

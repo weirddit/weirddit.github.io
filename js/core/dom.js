@@ -10,6 +10,8 @@
     dzMain: $('dz-main'), dzSub: $('dz-sub'),
     // player
     video: $('video'), playBtn: $('playbtn'), playLbl: $('playlbl'),
+    // shorts preview
+    stage: $('stage'), pvideo: $('pvideo'), previewBtn: $('previewbtn'),
     // timeline
     strip: $('strip'), tiles: $('tiles'), over: $('over'),
     playhead: $('playhead'), time: $('time')

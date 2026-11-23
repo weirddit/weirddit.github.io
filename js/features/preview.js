@@ -1,5 +1,5 @@
 /* Shorts Preview: plays the 3s intro clip, swipes up (like the Shorts feed), then the
-   user's video starts playing. While it runs, Play/Pause + timeline segments are disabled
+   user's video starts playing once the swipe has finished. While it runs, Play/Pause + timeline segments are disabled
    (body.locked); they unlock the moment the user's video actually starts playing.
    Emits: 'preview:start', 'preview:end'. */
 Weirddit.register('preview', function (W) {
@@ -10,10 +10,11 @@ Weirddit.register('preview', function (W) {
   pv.src = c.PREVIEW_SRC;
   stage.style.setProperty('--swipe', c.SWIPE_MS + 'ms');
 
-  // Lock/unlock Play-Pause + timeline
+  // Lock/unlock Play-Pause + Shorts Preview button + timeline
   function lock(on) {
     document.body.classList.toggle('locked', on);
     playBtn.disabled = on;
+    btn.disabled = on;
   }
 
   // Timeline clicks are swallowed while locked (capture on the parent runs before the strip's own handler)
@@ -29,24 +30,28 @@ Weirddit.register('preview', function (W) {
     stage.classList.remove('previewing', 'animating', 'swiped');
     pv.pause();
     running = false;
-    btn.disabled = false;
     W.emit('preview:end');
   }
 
-  // Preview clip finished -> swipe up, user's video starts playing as the swipe begins
-  function swipe() {
-    if (!running || stage.classList.contains('swiped')) return;
-    stage.classList.add('animating', 'swiped');
+  // Swipe animation done -> now (and only now) the user's video starts playing
+  function afterSwipe() {
+    cleanup();
     video.addEventListener('playing', onPlaying);
     var pr = video.play();
     if (pr && pr.catch) pr.catch(function () { lock(false); });   // autoplay blocked -> never leave the tool locked
-    timer = setTimeout(cleanup, c.SWIPE_MS + 80);
+  }
+
+  // Preview clip finished -> swipe up (video stays paused until the swipe ends)
+  function swipe() {
+    if (!running || stage.classList.contains('swiped')) return;
+    stage.classList.add('animating', 'swiped');
+    timer = setTimeout(afterSwipe, c.SWIPE_MS + 80);
   }
 
   function start() {
     if (running || !W.state.objUrl || !isFinite(video.duration)) return;
     running = true;
-    btn.disabled = true; lock(true);
+    lock(true);
     W.player.jumpTo(0);                                  // user's video: paused at 0:00
     stage.classList.remove('animating', 'swiped');
     stage.classList.add('previewing');

@@ -9,7 +9,7 @@
     back: $('back'), drop: $('drop'), fileIn: $('file'),
     dzMain: $('dz-main'), dzSub: $('dz-sub'),
     // player
-    video: $('video'), playBtn: $('playbtn'),
+    video: $('video'), playBtn: $('playbtn'), playLbl: $('playlbl'),
     // timeline
     strip: $('strip'), tiles: $('tiles'), over: $('over'),
     playhead: $('playhead'), time: $('time')

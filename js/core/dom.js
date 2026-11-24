@@ -12,6 +12,8 @@
     video: $('video'), playBtn: $('playbtn'), playLbl: $('playlbl'),
     // shorts preview
     stage: $('stage'), pvideo: $('pvideo'), previewBtn: $('previewbtn'),
+    // zone overlay
+    zone: $('zone'), zoneBtn: $('zonebtn'),
     // timeline
     strip: $('strip'), tiles: $('tiles'), over: $('over'),
     playhead: $('playhead'), time: $('time')

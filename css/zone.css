@@ -4,11 +4,11 @@
 :root{--zone-vh:min(100cqh,calc(100cqw*16/9))}   /* rendered video height (same as #video) */
 
 /* Overlay sits above the user's video (z1) but below the preview clip (z2) */
-.zone{position:absolute;inset:0;z-index:1;display:flex;pointer-events:none;border-radius:14px;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.zone{position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:14px;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
 .zone.show{opacity:1;visibility:visible}
 .stage.previewing .zone{visibility:hidden}
-.zone-safe{display:block;flex:0 0 var(--zone-safe,88%);background:rgba(34,197,94,.38)}
-.zone-danger{display:block;flex:1;background:rgba(239,68,68,.5)}
+.zone-danger{position:absolute;inset:0;display:block;background:rgba(239,68,68,.5)}
+.zone-safe{position:absolute;display:block;left:0;width:var(--zone-safe,88%);top:var(--zone-top,20%);bottom:var(--zone-bottom,20%);background:rgba(34,197,94,.38)}
 
 /* Button: top, just right of the video. On narrow screens it stays on-screen (overlaps the video's top-right). */
 .btn-zone{position:absolute;top:0;z-index:3;left:min(calc(50% + var(--zone-vh)*9/16/2 + 12px),calc(100% - 92px));display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:18px;background:rgba(255,255,255,.92);color:#0f0f0f;border:2px solid #0f0f0f;font-weight:700;font-size:14px;transition:background .15s,color .15s,transform .1s}

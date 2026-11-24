@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/player.css">
 <link rel="stylesheet" href="css/timeline.css">
 <link rel="stylesheet" href="css/preview.css">
+<link rel="stylesheet" href="css/zone.css">
 </head>
 <body>
 
@@ -46,7 +47,13 @@
       <div class="stage" id="stage">
         <video id="video" playsinline preload="auto"></video>
         <video id="pvideo" class="pv" playsinline preload="auto"></video>
+        <div class="zone" id="zone" aria-hidden="true"><i class="zone-safe"></i><i class="zone-danger"></i></div>
       </div>
+      <button class="btn-zone" id="zonebtn" aria-pressed="false" aria-label="Show zone">
+        <svg class="ic ic-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="ic ic-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg>
+        <span class="lbl">Zone</span>
+      </button>
     </div>
     <div class="controls">
       <button class="btn-play" id="playbtn" aria-label="Play">
@@ -79,6 +86,7 @@
 <script src="js/features/segments.js"></script>
 <script src="js/features/timeline.js"></script>
 <script src="js/features/preview.js"></script>
+<script src="js/features/zone.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

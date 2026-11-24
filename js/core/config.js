@@ -7,5 +7,7 @@ Weirddit.config = {
   MAX_LEN: 30,         // Shorts max length; anything after is greyed out
   PREVIEW_SRC: 'assets/shorts_preview.mp4',  // 3s intro clip for "Shorts Preview"
   SWIPE_MS: 450,       // swipe-up animation duration (ms)
-  ZONE_SAFE_PCT: 88    // Zone overlay: left 88% green (safe), remaining right 12% red (danger)
+  ZONE_SAFE_PCT: 88,   // Zone overlay: left 88% of width is safe (green), right 12% is red
+  ZONE_TOP_PCT: 20,    // Zone overlay: top 20% of height is red
+  ZONE_BOTTOM_PCT: 20  // Zone overlay: bottom 20% of height is red (middle 60% is safe)
 };

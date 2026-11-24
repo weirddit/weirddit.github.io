@@ -6,5 +6,6 @@ Weirddit.config = {
   LOOP_START: 27,      // segment starting here is labelled "Loop"
   MAX_LEN: 30,         // Shorts max length; anything after is greyed out
   PREVIEW_SRC: 'assets/shorts_preview.mp4',  // 3s intro clip for "Shorts Preview"
-  SWIPE_MS: 450        // swipe-up animation duration (ms)
+  SWIPE_MS: 450,       // swipe-up animation duration (ms)
+  ZONE_SAFE_PCT: 88    // Zone overlay: left 88% green (safe), remaining right 12% red (danger)
 };
